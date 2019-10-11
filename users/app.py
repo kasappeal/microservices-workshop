@@ -13,6 +13,8 @@ class User(object):
 
 def authenticate(username, password):
     result = db_client.users.find_one({'username': username, 'password': password})
+    if result is None:
+        return None
     return User(str(result['_id']), result['username'])
 
 
