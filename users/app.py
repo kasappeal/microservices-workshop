@@ -26,4 +26,5 @@ jwt.init_app(app)
 @app.route('/me')
 @jwt_required()
 def me():
-    return jsonify({'id': current_identity['id'], 'username': current_identity['username']})
+    user_data = {'id': current_identity['id'], 'username': current_identity['username']}
+    return jsonify(user_data)
