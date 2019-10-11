@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  mongo:
+    container_name: microservices_mongo
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+  redis:
+    container_name: microservices_redis
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
