@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_jwt import jwt_required, current_identity
 
 from shared.auth import jwt
-from users.db import db_client
+from auth.db import db_client
 
 
 class User(object):
