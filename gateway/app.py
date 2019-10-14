@@ -31,3 +31,12 @@ def movie_detail(movie_id):
     reviews = response.json()
     movie['reviews_list'] = reviews
     return jsonify(movie)
+
+
+@app.route('/reviews/<string:movie_id>', methods=['POST'])
+@jwt_required()
+def movie_review(movie_id):
+    url = f'{REVIEWS_SERVICE_URL}/reviews/{movie_id}'
+    response = requests.post(url, data=request.json)
+    result = response.json()
+    return jsonify(result), response.status_code

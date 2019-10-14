@@ -13,7 +13,6 @@ jwt.init_app(app)
 
 
 @app.route('/reviews/<string:movie_id>', methods=['POST'])
-@jwt_required()
 def movie_review(movie_id):
     data = request.json
     url = f'http://localhost:5001/movies/{movie_id}'
