@@ -1,5 +1,5 @@
 Flask==1.1.1
 Flask-JWT==0.3.2
 pymongo==3.9.0
-redis==3.3.8
+redis==4.5.3
 requests==2.22.0
